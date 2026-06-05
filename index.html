@@ -133,7 +133,9 @@
 
     .form-card iframe {
       width: 100%; border: none; display: block; border-radius: 16px;
-      height: 897px;
+      /* Tall enough to show the whole form + submit button without
+         scrolling inside the embed. Bump this if you add form fields. */
+      height: 1050px;
     }
 
     .fallback {
