@@ -113,6 +113,45 @@
       margin-top: -82px; position: relative; z-index: 5;
     }
 
+    /* ============================================================
+       EVENT DETAILS — date / time / location (above the form)
+       ============================================================ */
+    .details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+    .detail {
+      display: flex; gap: 13px; align-items: flex-start;
+      padding: 22px 24px;
+    }
+    .detail + .detail { border-left: 1px solid var(--line); }
+    .detail .ic {
+      width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+      background: var(--moss); color: var(--canopy);
+      display: grid; place-items: center;
+    }
+    .detail .ic svg { width: 21px; height: 21px; }
+    .detail .t {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--sage); font-weight: 600; margin-bottom: 4px;
+    }
+    .detail .v {
+      font-family: 'Fraunces', serif; font-size: 1.04rem; font-weight: 500;
+      line-height: 1.25; color: var(--ink);
+    }
+    .detail .v a { color: var(--forest); text-decoration: none; }
+    .detail .v a:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      .details { grid-template-columns: 1fr; }
+      .detail + .detail { border-left: none; border-top: 1px solid var(--line); }
+    }
+
     .form-card {
       background: #fff; border-radius: 26px;
       box-shadow: var(--shadow);
@@ -219,6 +258,38 @@
        REGISTRATION FORM
        ============================================================ -->
   <div class="stage">
+
+    <!-- EVENT DETAILS — edit date / time / address here -->
+    <div class="details">
+      <div class="detail">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <div class="meta">
+          <div class="t">Date</div>
+          <div class="v">Saturday,<br>June 13, 2026</div>
+        </div>
+      </div>
+      <div class="detail">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <div class="meta">
+          <div class="t">Time</div>
+          <div class="v">9:00am – 12:00pm</div>
+        </div>
+      </div>
+      <div class="detail">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4.5 6.5-7.6 6.5-10.5A6.5 6.5 0 0 0 5.5 10.5C5.5 13.4 8 16.5 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10.5" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <div class="meta">
+          <div class="t">Where</div>
+          <div class="v"><a href="https://www.google.com/maps/search/?api=1&query=7791+Herman+Ln+La+Palma+CA+90623" target="_blank" rel="noopener">7791 Herman Ln.<br>La Palma, CA 90623</a></div>
+        </div>
+      </div>
+    </div>
+
     <div class="form-card">
       <div class="form-intro">
         <h2>Reserve your spot</h2>
